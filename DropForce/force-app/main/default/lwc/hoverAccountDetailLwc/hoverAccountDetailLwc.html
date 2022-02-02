@@ -1,0 +1,17 @@
+<template>
+    <!-- 
+        Bailey Kandler ) LWC Component : Hover Account Detail
+        Displays some Quick Information About Supplier, when mouse hovers in Aura Component
+        Aura Component it interacts with : TakesObjectREtrunesImageList 
+    -->
+    <lightning-card title={name}>
+        <h1 style="text-align:center">
+            Id : {recordDisplayId} <br/>
+            Main Market : {market} <br/>
+            Total Locations : {locations} <br/>
+            Certifications : {certifications} <br/>
+        </h1>
+        <div slot="footer">Year Established : {year}</div>
+    </lightning-card>
+
+</template>
