@@ -54,7 +54,7 @@ export default class AddToCart extends LightningElement {
         this.isModalOpen = false;
     }
 
-    displayMessage() {
+    displayMessage(){
         //toast event to tell the user the items were added to their cart
         const event = new ShowToastEvent({
             title: 'Success!',
