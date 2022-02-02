@@ -1,6 +1,7 @@
+<!--Sean Fowler Makes a searchbar, & sends information-->
 <aura:component>
+        <aura:registerEvent name="sendStringEvent" type="c:sendStringCustomEvent"/>
         <aura:attribute name="Search" type="String"/>
         <ui:inputText label = 'Search' value="{!v.Search}" updateOn='click'/>
-        <lightning:button name="query" label="Search" onclick="{!c.handleClick}"/>
-</aura:component>	
-
+        <lightning:button name="query" label="Search" onclick="{!c.sendStringEvent}"/>
+</aura:component>

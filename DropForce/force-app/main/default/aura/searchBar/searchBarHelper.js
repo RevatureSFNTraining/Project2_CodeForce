@@ -1,6 +1,8 @@
 ({
-    search : function(cmp) {
+    //Sean Fowler Sending information to extieror component with a event handler
+    sendsearch : function(cmp, event) {
         var att = cmp.get("v.Search");
-        Event.fire(att);
+        event.setParam(att);
+        event.fire();
     }
 })

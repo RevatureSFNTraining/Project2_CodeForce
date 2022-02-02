@@ -1,5 +1,6 @@
 ({
-    handleClick : function(component, event, helper) {
-        helper.sendsearch(component);
+    
+    sendStringEvent : function(component, event, helper) {
+        helper.sendsearch(component, event);
     }
 })
