@@ -3,13 +3,12 @@ import { LightningElement, track, api, wire } from 'lwc';
 import { getRecord, getFieldValue} from 'lightning/uiRecordApi';
 import NAME_FIELD from '@salesforce/schema/Product2.Name';
 import DESCRIPTION_FIELD from '@salesforce/schema/Product2.description';
-import PRODUCT_URL__C_FIELD from '@salesforce/schema/Product2.Product_URL__c';
-import PRICE__C_FIELD from '@salesforce/schema/Product2.Price__c';
+import DROP_FORCE__DISPLAYURL__c_FIELD from '@salesforce/schema/Product2.DisplayUrl';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 
 //list of fields we're working with
-const productFields = [NAME_FIELD, DESCRIPTION_FIELD, PRODUCT_URL__C_FIELD, PRICE__C_FIELD];
+const productFields = [NAME_FIELD, DESCRIPTION_FIELD, DROP_FORCE__DISPLAYURL__c_FIELD];
 
 export default class AddToCart extends LightningElement {
     //creating our variables
@@ -33,7 +32,7 @@ export default class AddToCart extends LightningElement {
     //}
 
     get productPictureURL(){
-        return getFieldValue(this.Product2.data, PRODUCT_URL__C_FIELD);
+        return getFieldValue(this.Product2.data, DROP_FORCE__DISPLAYURL__c_FIELD);
     }
 
         //Boolean tracked variable to indicate if modal is open or not

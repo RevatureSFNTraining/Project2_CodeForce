@@ -1,0 +1,14 @@
+<aura:component controller="ProductInfoParentApexController">
+    <aura:attribute name="ProductID" type="String"/>
+    <aura:attribute name="ManufacturerID" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.retrieveMID}"/>
+    <div class="slds-grid slds-grid_vertical">
+        <div class="slds-col slds-size_2-of-3">
+            <!--Mohamed's component here-->
+            <p>testing</p>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <!--Anna's component here-->
+        </div>
+    </div>
+</aura:component>
