@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>searchString</masterLabel>
+    <isExposed>true</isExposed>
+    <description>A Lightning Message Channel for searched string.</description>
+        <lightningMessageFields>
+            <description>What The user is searching for.</description>
+            <fieldName>searchQuery</fieldName>
+        </lightningMessageFields>
+</LightningMessageChannel>
