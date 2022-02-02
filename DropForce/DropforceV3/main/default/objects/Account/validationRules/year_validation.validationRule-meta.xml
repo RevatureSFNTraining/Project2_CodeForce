@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>year_validation</fullName>
-    <active>true</active>
-    <errorConditionFormula>VALUE(YearStarted) &gt; YEAR(TODAY())</errorConditionFormula>
-    <errorDisplayField>YearStarted</errorDisplayField>
-    <errorMessage>The year started must not be in the future.</errorMessage>
-</ValidationRule>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Type_retailer</fullName>
-    <active>true</active>
-    <errorConditionFormula>!ISPICKVAL(Account.Type, &apos;Retailer&apos;)</errorConditionFormula>
-    <errorMessage>Only Retailer accounts can create orders</errorMessage>
-</ValidationRule>

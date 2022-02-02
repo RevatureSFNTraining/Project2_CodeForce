@@ -1,0 +1,6 @@
+<aura:component>
+        <aura:attribute name="Search" type="String"/>
+        <ui:inputText label = 'Search' value="{!v.Search}" updateOn='click'/>
+        <lightning:button name="query" label="Search" onclick="{!c.handleClick}"/>
+</aura:component>	
+
