@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Add New Product" icon-name="standard:contact">
+        <div class="slds-p-horizontal_small">
+            <lightning-input label="Product Name" value={productname} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+            <lightning-input label="Product Price" value={productprice} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+            <lightning-input label="Product URL" value={url} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+            <c-lwc-account-custom-lookup onselected={myLookupHandle}></c-lwc-account-custom-lookup><br/>
+            <lightning-button label="Submit" variant="brand" onclick={createLookupContactAction} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-button>                     
+        </div>
+
+<br/> <br/>
+</lightning-card>
+</template>
