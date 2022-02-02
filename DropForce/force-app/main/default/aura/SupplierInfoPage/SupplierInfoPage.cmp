@@ -1,0 +1,22 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+
+    <!-- 
+		Bailey Kandler ) Aura Component : Supplier Info Page 
+			Displays General Info About Supplier
+			Then Displays a List of Products that Supplier Manufactures
+	-->
+
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="fields" type="String[]" default="['Name','Type','BillingCountry','Drop_Force__Certifications__c','Drop_Force__Main_Market__c','YearStarted']"/>
+    <!-- Displays a Record Form for the Id set in Attribute -->
+    <lightning:recordForm
+        recordId="{!v.recordId}"
+        objectApiName="Account"
+        mode="readonly"
+        fields="{!v.fields}"
+    />
+
+    <!-- Call Component to Display Products Related to Supplier -->
+    <c:TakesObjectReturnsImageList typeObject="Product" manufacturerID = "{!v.recordId}" hMany="3"></c:TakesObjectReturnsImageList>
+
+</aura:component>
