@@ -1,0 +1,31 @@
+.THIS {
+    color: black;
+}
+.c-container.THIS {    
+    margin: 0;
+    min-height: calc(100vh - 250px);
+}
+
+.test.THIS {
+    position:relative;
+    float:left;
+    height: 250px;
+    width: 250px;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+}
+
+.hide.THIS {
+    display: none;
+  }
+  
+.test:hover.THIS + .hide.THIS {
+    display: block;
+    float:left;
+    position:relative;
+    color:black;
+    height: 250px;
+    width: 250px;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+  }

@@ -1,10 +1,10 @@
-public class FeaturedMTriggerHelper {
-    public static void FeaturedMTriggerHelper(List<Featured_Account__c> fmList) {
+public class FeaturedMTriggerHelper { //Anna Sersch
+    public static void FeaturedMTriggerHelper(List<Drop_Force__Featured_Account__c> fmList) {
         Id featuredMobject = fmList[0].id;
 
-        List<Account> previousFeature = [SELECT FeaturedM__c,Id FROM Account WHERE Type = 'Manufacturer' AND FeaturedM__c = :featuredMobject];
-        List<Account> newFeature = [SELECT FeaturedM__c,Id FROM Account WHERE Type = 'Manufacturer' AND Id NOT IN :previousFeature];
-        // check if length of accounts left is larger or equals than length of previous feature, if yes continue if not addError preventing deletion
+        List<Account> previousFeature = [SELECT Drop_Force__FeaturedM__c,Id FROM Account WHERE Type = 'Manufacturer' AND Drop_Force__FeaturedM__c = :featuredMobject];
+        List<Account> newFeature = [SELECT Drop_Force__FeaturedM__c,Id FROM Account WHERE Type = 'Manufacturer' AND Id NOT IN :previousFeature];
+
     
         Integer plistSize = previousFeature.size();
         Integer nlistSize = newFeature.size();
@@ -24,19 +24,20 @@ public class FeaturedMTriggerHelper {
                     randomNumber.add(Integer.valueof(Math.random() * nlistSize));    
                 }
 
-                Featured_Account__c nAcc = new Featured_Account__c();
+                Drop_Force__Featured_Account__c nAcc = new Drop_Force__Featured_Account__c();
                 insert nAcc;
 
-                Featured_Account__c newFM = [Select Id FROM Featured_Account__c WHERE Id != :featuredMobject LIMIT 1];
+                Drop_Force__Featured_Account__c newFM = [Select Id FROM Drop_Force__Featured_Account__c WHERE Id != :featuredMobject LIMIT 1];
 
                 
                 //creates a look up relationship between the accounts to be featured and the .. oh i must create a new featuredMobject first. So create new featuredM object, soql query it, assign that id
                 List<Account> updateAcc = new List<Account>();
 
                 for (Integer i : randomNumber) {
-                    newFeature[i].FeaturedM__c = newFM.Id;
+                    newFeature[i].Drop_Force__FeaturedM__c = newFM.Id;
                     updateAcc.add(newFeature[i]);
                 }
+
                 update updateAcc;
             }
         }

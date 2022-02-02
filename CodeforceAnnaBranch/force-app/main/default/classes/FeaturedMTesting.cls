@@ -1,11 +1,11 @@
 @isTest
-public class FeaturedMTesting {
+public class FeaturedMTesting { //Anna Sersch
     @TestSetup
     static void makeData(){
-        Featured_Account__c nAcc = new Featured_Account__c();
+        Drop_Force__Featured_Account__c nAcc = new Drop_Force__Featured_Account__c();
         insert nAcc;
 
-        Featured_Account__c lookup = [SELECT Id FROM Featured_Account__c LIMIT 1];
+        Drop_Force__Featured_Account__c lookup = [SELECT Id FROM Drop_Force__Featured_Account__c LIMIT 1];
 
         Id lookupId = lookup.Id;
 
@@ -13,7 +13,7 @@ public class FeaturedMTesting {
         List<Account> testAccts = new List<Account>();
 
         for(Integer x=0;x<=2;x++) {
-            testAccts.add(new Account(Name = 'Test Account', Type = 'Manufacturer', FeaturedM__c = lookupId));
+            testAccts.add(new Account(Name = 'Test Account', Type = 'Manufacturer', Drop_Force__FeaturedM__c = lookupId));
         }
 
         for(Integer x=0;x<=2;x++) {
@@ -28,12 +28,12 @@ public class FeaturedMTesting {
     public static void positiveTest() {
         /* checks if the accounts are updated correctly by checking if deletion went through and count number of look up relationships in account  */
         
-        Featured_Account__c positiveTest = [SELECT Id FROM Featured_Account__c LIMIT 1];
+        Drop_Force__Featured_Account__c positiveTest = [SELECT Id FROM Drop_Force__Featured_Account__c LIMIT 1];
         Test.startTest();
         Database.DeleteResult result = Database.delete(positiveTest, true);
 
-        Integer x = [SELECT Count() FROM Account WHERE FeaturedM__c != Null]; // returns the number of Accounts with a Relationship to Featured_Account__c
-        Integer y = [SELECT Count() FROM Featured_Account__c];
+        Integer x = [SELECT Count() FROM Account WHERE Drop_Force__FeaturedM__c != Null]; // returns the number of Accounts with a Relationship to Featured_Account__c
+        Integer y = [SELECT Count() FROM Drop_Force__Featured_Account__c];
         Test.stopTest();
 
         System.assert(result.isSuccess()); //checks if deletion went through
@@ -45,12 +45,12 @@ public class FeaturedMTesting {
     @isTest
     public static void negativeTest() { //prevents delete if not enough accounts are there to replace them - we create 1 more account with a lookup to the featuredObject, so there's 4 to 3
     
-        Featured_Account__c positiveTest = [SELECT Id FROM Featured_Account__c LIMIT 1];
+        Drop_Force__Featured_Account__c positiveTest = [SELECT Id FROM Drop_Force__Featured_Account__c LIMIT 1];
 
         Account nAcc = new Account();
         nAcc.Name = 'James';
         nAcc.Type = 'Manufacturer';
-        nAcc.FeaturedM__c = positiveTest.Id;
+        nAcc.Drop_Force__FeaturedM__c = positiveTest.Id;
 
         insert nAcc;
 

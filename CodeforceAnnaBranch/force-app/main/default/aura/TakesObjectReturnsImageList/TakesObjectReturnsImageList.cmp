@@ -1,0 +1,27 @@
+<aura:component controller="objectRenderListController" implements="forceCommunity:availableForAllPageTypes" access="global">
+    
+<!-- Written by: Anna Sersch
+    Component that lets you render a list of Objects with a hover effect
+    Attributes you pass in will determine the type of list rendered as well as how many -->
+
+<aura:attribute name="typeObject" type="String" default="FSupplier" required="true"/> <!--Supported Values for typeObject: FSupplier, FProduct, Product, Search -->
+<aura:attribute name="hMany" type="Integer" default="6"/> 
+<aura:attribute name="searchProduct" type="String" default="none" />
+<aura:attribute name="manufacturerID" type="String" default="0018c000028p8qSAAQ" />
+
+<aura:attribute name="objectList" type="Object[]"/> <!-- not sure if "type Object[]" is a thing !-->
+
+<aura:handler name="init" value="{!this}" action="{!c.fetchObjects}"/>
+
+<aura:iteration items="{!v.objectList}" var="object"><div class="test"><center><img src="{!object.Drop_Force__DisplayURL__c}"  style="width:190px;height:auto;" /></center></div>
+   <div class="hide">
+    <aura:if isTrue="{!v.typeObject == 'FSupplier'}">
+        <c:hoverAccountDetailLwc recordDisplayId="{!object.Id}"></c:hoverAccountDetailLwc>
+        <aura:set attribute="else">
+            <c:hoverProductDetail recordDisplayId="{!object.Id}"></c:hoverProductDetail>
+        </aura:set>
+      </aura:if> 
+            </div>
+</aura:iteration>
+
+</aura:component>
