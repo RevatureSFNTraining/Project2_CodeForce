@@ -1,0 +1,41 @@
+<!--Sean Fowler Makes a searchbar, & sends information
+Ammended by Anna Sersch-->
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+
+        <aura:attribute name="Search" type="String"/>
+        <aura:attribute name="truthy" type="String" default="false"/>
+
+
+        <div class="searchbardiv">
+        <lightning:input label = 'Search' type="String" value="{!v.Search}" updateOn='click'/>
+
+        <button class="submit" onclick="{!c.falsey}">SEARCH</button>
+                <!-- <button name="searchNow" label="Search" onclick="{!c.sendStringEvent}" iconPosition="Left"/> --></div>
+        <center>
+        <aura:if isTrue="{!v.truthy == 'true'}">
+
+        <c:TakesObjectReturnsImageList typeObject="Search" searchProduct="{!v.Search}" hMany="10"></c:TakesObjectReturnsImageList>
+        </aura:if>
+        <aura:if isTrue="{!v.truthy == 'false'}">
+                <div class="slds-grid slds-grid_vertical">
+                        <div class="slds-col">
+                          <span style="font-size: 2em;">Featured Products</span>
+                        </div>
+                        <div class="slds-col">
+                                <c:TakesObjectReturnsImageList typeObject="FProduct" hMany="5"></c:TakesObjectReturnsImageList> 
+                        </div>
+                        <div class="slds-col">
+                          <span style="font-size: 2em;">Featured Suppliers</span>
+                        </div>
+                        <div class="slds-col">
+                                <c:TakesObjectReturnsImageList typeObject="FSupplier" hMany="5"></c:TakesObjectReturnsImageList>
+                              </div>
+                      </div>
+        </aura:if>
+        <aura:if isTrue="{!v.truthy == 'truthy'}">
+                <c:TakesObjectReturnsImageList typeObject="Search" searchProduct="{!v.Search}" hMany="10"></c:TakesObjectReturnsImageList>
+        </aura:if> 
+        
+        </center>
+    
+</aura:component>

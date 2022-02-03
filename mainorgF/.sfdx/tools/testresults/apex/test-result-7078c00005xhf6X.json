@@ -1,0 +1,47 @@
+{
+  "summary": {
+    "outcome": "Skipped",
+    "testsRan": 1,
+    "passing": 0,
+    "failing": 0,
+    "skipped": 1,
+    "passRate": "0%",
+    "failRate": "0%",
+    "skipRate": "100%",
+    "testStartTime": "Wed Feb 02 2022 12:46:55 AM",
+    "testExecutionTimeInMs": 0,
+    "testTotalTimeInMs": 0,
+    "commandTimeInMs": 301,
+    "hostname": "https://cunning-fox-ikjabk-dev-ed.my.salesforce.com",
+    "orgId": "00D8c0000024ZinEAE",
+    "username": "kisame348@cunning-fox-ikjabk.com",
+    "testRunId": "7078c00005xhf6X",
+    "userId": "0058c000008aSx2AAE"
+  },
+  "tests": [
+    {
+      "id": "07M8c000002ITq5EAG",
+      "queueItemId": "7098c000000YxGWAA0",
+      "stackTrace": null,
+      "message": "Method FProductTest does not exist in the the apex class with Id :01p8c000008n3rc",
+      "asyncApexJobId": "7078c00005xhf6XAAQ",
+      "methodName": "FProductTest",
+      "outcome": "Skip",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p8c000008n3rcAAA",
+        "name": "objectRenderListControllerTest",
+        "namespacePrefix": "Drop_Force",
+        "fullName": "Drop_Force__objectRenderListControllerTest"
+      },
+      "runTime": 0,
+      "testTimestamp": "2022-02-02T05:46:56.000+0000",
+      "fullName": "Drop_Force__objectRenderListControllerTest.FProductTest",
+      "diagnostic": {
+        "exceptionMessage": "Method FProductTest does not exist in the the apex class with Id :01p8c000008n3rc",
+        "exceptionStackTrace": null,
+        "compileProblem": ""
+      }
+    }
+  ]
+}

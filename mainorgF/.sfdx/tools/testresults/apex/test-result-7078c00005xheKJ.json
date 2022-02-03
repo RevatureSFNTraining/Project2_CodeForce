@@ -1,0 +1,50 @@
+{
+  "summary": {
+    "outcome": "Failed",
+    "testsRan": 1,
+    "passing": 0,
+    "failing": 1,
+    "skipped": 0,
+    "passRate": "0%",
+    "failRate": "100%",
+    "skipRate": "0%",
+    "testStartTime": "Wed Feb 02 2022 12:47:30 AM",
+    "testExecutionTimeInMs": 0,
+    "testTotalTimeInMs": 0,
+    "commandTimeInMs": 289,
+    "hostname": "https://cunning-fox-ikjabk-dev-ed.my.salesforce.com",
+    "orgId": "00D8c0000024ZinEAE",
+    "username": "kisame348@cunning-fox-ikjabk.com",
+    "testRunId": "7078c00005xheKJ",
+    "userId": "0058c000008aSx2AAE"
+  },
+  "tests": [
+    {
+      "id": "07M8c000002ITqAEAW",
+      "queueItemId": "7098c000000YxGbAAK",
+      "stackTrace": "Class.Drop_Force.objectRenderListControllerTest.makeData: line 38, column 1",
+      "message": "System.DmlException: Insert failed. First exception on row 0; first error: REQUIRED_FIELD_MISSING, Required fields are missing: [Drop_Force__Price__c]: [Drop_Force__Price__c]",
+      "asyncApexJobId": "7078c00005xheKJAAY",
+      "methodName": "FProductTest",
+      "outcome": "Fail",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p8c000008n3rcAAA",
+        "name": "objectRenderListControllerTest",
+        "namespacePrefix": "Drop_Force",
+        "fullName": "Drop_Force__objectRenderListControllerTest"
+      },
+      "runTime": 0,
+      "testTimestamp": "2022-02-02T05:47:33.000+0000",
+      "fullName": "Drop_Force__objectRenderListControllerTest.FProductTest",
+      "diagnostic": {
+        "exceptionMessage": "System.DmlException: Insert failed. First exception on row 0; first error: REQUIRED_FIELD_MISSING, Required fields are missing: [Drop_Force__Price__c]: [Drop_Force__Price__c]",
+        "exceptionStackTrace": "Class.Drop_Force.objectRenderListControllerTest.makeData: line 38, column 1",
+        "className": "Drop_Force",
+        "compileProblem": "",
+        "lineNumber": 38,
+        "columnNumber": 1
+      }
+    }
+  ]
+}

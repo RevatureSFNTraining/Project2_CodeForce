@@ -1,0 +1,50 @@
+{
+  "summary": {
+    "outcome": "Failed",
+    "testsRan": 1,
+    "passing": 0,
+    "failing": 1,
+    "skipped": 0,
+    "passRate": "0%",
+    "failRate": "100%",
+    "skipRate": "0%",
+    "testStartTime": "Wed Feb 02 2022 12:50:58 AM",
+    "testExecutionTimeInMs": 37,
+    "testTotalTimeInMs": 37,
+    "commandTimeInMs": 280,
+    "hostname": "https://cunning-fox-ikjabk-dev-ed.my.salesforce.com",
+    "orgId": "00D8c0000024ZinEAE",
+    "username": "kisame348@cunning-fox-ikjabk.com",
+    "testRunId": "7078c00005xhfGl",
+    "userId": "0058c000008aSx2AAE"
+  },
+  "tests": [
+    {
+      "id": "07M8c000002ITqPEAW",
+      "queueItemId": "7098c000000YxGqAAK",
+      "stackTrace": "Class.Drop_Force.objectRenderListControllerTest.SearchTest: line 75, column 1",
+      "message": "System.AssertException: Assertion Failed: Expected: Product2, Actual: Account",
+      "asyncApexJobId": "7078c00005xhfGlAAI",
+      "methodName": "SearchTest",
+      "outcome": "Fail",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p8c000008n3rcAAA",
+        "name": "objectRenderListControllerTest",
+        "namespacePrefix": "Drop_Force",
+        "fullName": "Drop_Force__objectRenderListControllerTest"
+      },
+      "runTime": 37,
+      "testTimestamp": "2022-02-02T05:51:01.000+0000",
+      "fullName": "Drop_Force__objectRenderListControllerTest.SearchTest",
+      "diagnostic": {
+        "exceptionMessage": "System.AssertException: Assertion Failed: Expected: Product2, Actual: Account",
+        "exceptionStackTrace": "Class.Drop_Force.objectRenderListControllerTest.SearchTest: line 75, column 1",
+        "className": "Drop_Force",
+        "compileProblem": "",
+        "lineNumber": 75,
+        "columnNumber": 1
+      }
+    }
+  ]
+}

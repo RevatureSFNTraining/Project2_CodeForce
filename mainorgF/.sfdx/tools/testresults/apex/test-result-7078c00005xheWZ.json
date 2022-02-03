@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "outcome": "Passed",
+    "testsRan": 2,
+    "passing": 2,
+    "failing": 0,
+    "skipped": 0,
+    "passRate": "100%",
+    "failRate": "0%",
+    "skipRate": "0%",
+    "testStartTime": "Wed Feb 02 2022 12:49:41 AM",
+    "testExecutionTimeInMs": 55,
+    "testTotalTimeInMs": 55,
+    "commandTimeInMs": 272,
+    "hostname": "https://cunning-fox-ikjabk-dev-ed.my.salesforce.com",
+    "orgId": "00D8c0000024ZinEAE",
+    "username": "kisame348@cunning-fox-ikjabk.com",
+    "testRunId": "7078c00005xheWZ",
+    "userId": "0058c000008aSx2AAE"
+  },
+  "tests": [
+    {
+      "id": "07M8c000002ITqKEAW",
+      "queueItemId": "7098c000000YxGlAAK",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7078c00005xheWZAAY",
+      "methodName": "FProductTest",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p8c000008n3rcAAA",
+        "name": "objectRenderListControllerTest",
+        "namespacePrefix": "Drop_Force",
+        "fullName": "Drop_Force__objectRenderListControllerTest"
+      },
+      "runTime": 29,
+      "testTimestamp": "2022-02-02T05:49:42.000+0000",
+      "fullName": "Drop_Force__objectRenderListControllerTest.FProductTest"
+    },
+    {
+      "id": "07M8c000002ITqLEAW",
+      "queueItemId": "7098c000000YxGlAAK",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7078c00005xheWZAAY",
+      "methodName": "FSupplierTest",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p8c000008n3rcAAA",
+        "name": "objectRenderListControllerTest",
+        "namespacePrefix": "Drop_Force",
+        "fullName": "Drop_Force__objectRenderListControllerTest"
+      },
+      "runTime": 26,
+      "testTimestamp": "2022-02-02T05:49:42.000+0000",
+      "fullName": "Drop_Force__objectRenderListControllerTest.FSupplierTest"
+    }
+  ]
+}
