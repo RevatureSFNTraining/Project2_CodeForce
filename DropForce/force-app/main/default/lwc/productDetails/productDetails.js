@@ -28,11 +28,9 @@ export default class ProductDetails extends NavigationMixin(LightningElement) {
 	// Exposing fields to make them available in the template
 
 	// Id of Product to display
-	// @api recordId;
-	@api recordId = '01t8c00000LnaAbAAJ'; 
+	@api recordId;
+	// @api recordId = '01t8c00000LnaAbAAJ'; 
 	
-	productDescription = DESCRIPTION_FIELD; 
-
 	//default quantity
 	qty = 1;
 
@@ -55,7 +53,7 @@ export default class ProductDetails extends NavigationMixin(LightningElement) {
 		return getFieldValue(this.Product2.data, PRICE_FIELD); 
 	}
 
-	//get Product2 discription 
+	// //get Product2 discription 
 	get description(){
 		return getFieldValue(this.Product2.data, DESCRIPTION_FIELD);
 	}
