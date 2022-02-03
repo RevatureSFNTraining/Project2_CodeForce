@@ -12,11 +12,24 @@ import productUrlName from '@salesforce/schema/Product2.DisplayURL__c';
 import accountFieldId from '@salesforce/schema/Product2.Manufacturer__c';
 
 export default class LwcCreateContactCustomLookup extends NavigationMixin(LightningElement) {   
+
+    @track isModalOpen = false;
     @track selectedAccountId;
     @track contactId;    
     productname = '';
     productprice = '';   
     url = '';
+
+    openModal() {
+        // to open modal set isModalOpen track value as true
+        this.isModalOpen = true;
+    }
+    closeModal() {
+            // to close modal set isModalOpen track value as false
+        this.isModalOpen = false;
+    }
+
+    // Handles all input and button actions
     contactHandleChange(event) {
         console.log(event.target.label);
         console.log(event.target.value);        
@@ -31,6 +44,7 @@ export default class LwcCreateContactCustomLookup extends NavigationMixin(Lightn
         }          
     }
 
+    // Handles the submit action of the button by creating a new product if successful
     createLookupContactAction(){
         console.log(this.selectedAccountId);
         const fields = {};
@@ -60,9 +74,11 @@ export default class LwcCreateContactCustomLookup extends NavigationMixin(Lightn
                     }),
                 );
             });
+        this.isModalOpen = false;
     }
     myLookupHandle(event){
         console.log(event.detail);
         this.selectedAccountId = event.detail;
     }
+
 }
