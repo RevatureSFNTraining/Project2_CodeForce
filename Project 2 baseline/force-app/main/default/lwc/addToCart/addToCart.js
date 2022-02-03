@@ -1,3 +1,4 @@
+//Made by Nathan. This component brings up a verification page and displays a success message. This component is placed wherever items need to be added to a cart
 //importing elements to work with
 import { LightningElement, track, api, wire } from 'lwc';
 import { getRecord, getFieldValue} from 'lightning/uiRecordApi';
@@ -12,14 +13,12 @@ const productFields = [NAME_FIELD, DESCRIPTION_FIELD, DROP_FORCE__DISPLAYURL__c_
 
 export default class AddToCart extends LightningElement {
     //creating our variables
-    @api recordId = '01t8c00000IYaiuAAD';
-    @api totalPrice = 7460;
-    @api qty = 5;
+    @api recordId;
+    @api totalPrice;
+    @api qty;
     //accessing fields of the record we're working with
     @wire(getRecord, { recordId: '$recordId', fields: productFields })
     Product2;
-    //message for toast alert
-    message = "product has been added to cart!";
 
     //getters for our HTML components to display data
     get name(){
