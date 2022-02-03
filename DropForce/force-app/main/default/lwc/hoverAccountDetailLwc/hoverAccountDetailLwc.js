@@ -34,7 +34,7 @@ export default class HoverObjectDetailLwc extends NavigationMixin (LightningElem
                 name: 'Supplier_Info__c'
             },
             state: {
-                c__recordId: '01t8c00000HE0JYAA1',
+                c__recordId: '$recordDisplayId',
             }
         };
         this[NavigationMixin.GenerateUrl](this.accountHomePageRef)
