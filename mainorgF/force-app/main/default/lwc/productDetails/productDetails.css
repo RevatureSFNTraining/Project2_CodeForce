@@ -1,0 +1,13 @@
+.product-card {
+	display: flex;
+	justify-content: center;
+}
+
+img {
+  height: 640px;
+
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  padding: var(--lwc-borderWidthThin, 1px) !important;
+}

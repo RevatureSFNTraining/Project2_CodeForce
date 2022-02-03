@@ -1,0 +1,27 @@
+<!--Written by Nathan. This component houses the product info component as well as the component that returns products from manufacturer id-->
+
+<!--component utilizes the controller called ProductInfoParentApexConroller-->
+<aura:component controller="ProductInfoParentApexController" implements="forceCommunity:availableForAllPageTypes,force:hasRecordId,lightning:hasPageReference,force:appHostable,lightning:isUrlAddressable" access="global">
+     <!--attributes are used to receive and push data-->
+	<aura:attribute name="productID" type="String" default="01t8c00000HDoUoAAL"/>
+    <aura:attribute name="manuID" type="String"/>
+    <!--handler is used to call the function used to retrieve the ID of the product's manufacturer-->
+    <aura:handler name="init" value="{!this}" action="{!c.retrieveMID}"/>
+
+    {!v.urlParameter}
+
+   	<!--both child components are styled using slds grid-->
+    <div class="slds-grid slds-grid_vertical">
+        <div class="slds-col">
+            <!--product details child component. Written by Mohamed-->
+            <!--"{!v.productID}" "01t8c00000HDoUoAAL"-->
+        	<c:productDetails recordId ="{!v.recordId}"></c:productDetails>
+        </div>
+        <div class="slds-col">
+            <!--"{!v.manuID}" "0018c000028p8qPAAQ"-->
+            <!--child component retrieves products from the same manufacturer. Written by Anna-->
+            <!--<p>{!v.manuID}</p> For some reason this will print the correct ID, but data binding it below does not work while hard coding it does-->
+            <c:TakesObjectReturnsImageList typeObject="Product" manufacturerID="0018c000028LutTAAS" hMany="3"></c:TakesObjectReturnsImageList>
+        </div>
+    </div>
+</aura:component>

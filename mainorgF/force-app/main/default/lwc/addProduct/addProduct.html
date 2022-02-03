@@ -1,0 +1,51 @@
+<template>
+    <!--Made by Nathan. This is the markup for opening a modal window to display verification info-->
+    <!-- lightning button for open modal window -->
+    <lightning-button variant="brand"
+       label="Add New Product"
+       title="Add New Product"
+       onclick={openModal}
+       class="slds-m-left_x-small">
+    </lightning-button>
+    <!--Use template if:true to display/hide popup based on isModalOpen value--> 
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Add items to your cart?</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <!-- Andrew Tran's lwc component allowing to add in new products to manufacturerers-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-card title="Add New Product" icon-name="standard:contact">
+                        <div class="slds-p-horizontal_small">
+                            <lightning-input label="Product Name" value={productname} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+                            <lightning-input label="Product Price" value={productprice} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+                            <lightning-input label="Product URL" value={url} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+                            <c-lwc-account-custom-lookup onselected={myLookupHandle}></c-lwc-account-custom-lookup><br/>                
+                        </div>
+                
+                <br/> <br/>
+                </lightning-card>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <!--Cancel button as no added functionality-->
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                    <!--Ok button adds a toast message-->
+                    <button class="slds-button slds-button_brand" onclick={createLookupContactAction} title="OK">OK</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+ </template>

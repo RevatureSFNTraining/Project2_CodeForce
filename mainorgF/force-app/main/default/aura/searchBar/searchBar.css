@@ -1,0 +1,13 @@
+.searchbardiv.THIS { 
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 80px;
+}
+
+.submit.THIS {
+    display: inline-block;
+    text-align: center;
+    border: none;
+}

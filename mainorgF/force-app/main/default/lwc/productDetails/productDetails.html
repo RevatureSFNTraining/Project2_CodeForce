@@ -1,0 +1,84 @@
+<template>
+	<lightning-card icon-name="standard:apex_plugin" class="product-card">
+	  <template if:true={recordId}>
+		<span slot="title">{productName}</span>
+		<lightning-button-icon
+		  icon-name="utility:expand_alt"
+		  slot="actions"
+		  onclick={handleNavigateToRecord}
+		></lightning-button-icon>
+   
+		<div class="slds-var-m-horizontal_medium">
+		  <lightning-record-view-form
+			record-id={recordId}
+			onload={handleRecordLoaded}
+			object-api-name="Product2"
+			density="compact"
+		  >
+			<img
+			  if:true={productPictureUrl}
+			  src={productPictureUrl}
+			  class="product"
+			  alt="Product picture"
+			/>
+   
+			<h2 class="slds-var-p-around_xx-small slds-text-body_regular">
+			  <lightning-layout>
+				<lightning-layout-item
+				  size="6"
+				  class="slds-var-p-right_xx-small"
+				>
+				  Price:&nbsp;
+				  <lightning-formatted-number
+					value={price}
+					format-style="currency"
+					currency-code="USD"
+				  >
+				  </lightning-formatted-number>
+				</lightning-layout-item>
+				<lightning-layout-item
+				  size="6"
+				  class="slds-var-p-right_xx-small bold-text"
+				>
+				  Total:&nbsp;
+				  <lightning-formatted-number
+					value={totalPrice}
+					format-style="currency"
+					currency-code="USD"
+				  >
+				  </lightning-formatted-number>
+				</lightning-layout-item>
+			  </lightning-layout>
+			</h2>
+   
+			<lightning-layout>
+			  <lightning-layout-item
+				size="6"
+				class="slds-var-p-right_xx-small"
+			  >
+				<lightning-input
+				  step="1"
+				  type="number"
+				  value={qty}
+				  label="Quantity"
+				  onchange={handleChange}
+				>
+				</lightning-input>
+			  </lightning-layout-item>
+			</lightning-layout>
+   
+			<lightning-output-field
+			  field-name={description}
+			></lightning-output-field>
+		  </lightning-record-view-form>
+   
+		  <c-add-to-cart record-id={recordId} qty={qty} total-price={totalPrice}></c-add-to-cart>
+		</div>
+	  </template>
+	  <template if:false={recordId}>
+		<div class="slds-var-p-around_large">
+		  <p class="placeholder">Select a product to see details</p>
+		</div>
+	  </template>
+	 </lightning-card>
+  </template>
