@@ -1,91 +1,97 @@
 <template>
-	<lightning-card icon-name="standard:apex_plugin" class="product-card">
-		<template if:true={recordId}>
-			<span slot="title">{productName}</span>
-			<lightning-button-icon
-				icon-name="utility:expand_alt"
-				slot="actions"
-				onclick={handleNavigateToRecord}
-			></lightning-button-icon>
-			
+  <lightning-card icon-name="standard:apex_plugin" class="product-card">
+    <template if:true={recordId}>
+      <span slot="title">{productName}</span>
+      <lightning-button-icon
+        icon-name="utility:expand_alt"
+        slot="actions"
+        onclick={handleNavigateToRecord}
+      ></lightning-button-icon>
 
-			<div class="layout-div">
-				<lightning-layout padding="around-small">
-					<div class="image-container">
-						<lightning-layout-item padding="around-small">							
-								<div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
-									<img
-									if:true={productPictureUrl}
-									src={productPictureUrl}
-									class="product"
-									alt="Product picture"
-								/>
-								</div>
-						</lightning-layout-item>
-					</div>
+      <div class="layout-div">
+        <lightning-layout padding="around-small">
+          <div class="image-container">
+            <lightning-layout-item padding="around-small">
+              <div
+                class="
+                  custom-box
+                  slds-box
+                  slds-p-around_medium
+                  slds-text-align_center
+                "
+              >
+                <img
+                  if:true={productPictureUrl}
+                  src={productPictureUrl}
+                  class="product"
+                  alt="Product picture"
+                />
+              </div>
+            </lightning-layout-item>
+          </div>
 
+          <div class="product-detail-container">
+            <div class="price-total-container">
+              <lightning-layout-item padding="around-small">
+                <span>
+                  Price:&nbsp;
+                  <lightning-formatted-number
+                    value={price}
+                    format-style="currency"
+                    currency-code="USD"
+                  >
+                  </lightning-formatted-number>
+                </span>
+              </lightning-layout-item>
 
-				<div class="product-detail-container">
+              <lightning-layout-item padding="around-small">
+                <span>
+                  Total:&nbsp;
+                  <lightning-formatted-number
+                    value={totalPrice}
+                    format-style="currency"
+                    currency-code="USD"
+                  >
+                  </lightning-formatted-number>
+                </span>
+              </lightning-layout-item>
+            </div>
 
-				<div class="price-total-container">
-						<lightning-layout-item padding="around-small">
-								<span>
-									Price:&nbsp;
-								<lightning-formatted-number
-									value={price}
-									format-style="currency"
-									currency-code="USD"
-								>
-								</lightning-formatted-number>
-								</span>
-						</lightning-layout-item>
-	
-						<lightning-layout-item padding="around-small">
-								<span>
-									Total:&nbsp;
-								<lightning-formatted-number
-									value={totalPrice}
-									format-style="currency"
-									currency-code="USD"
-								>
-							</lightning-formatted-number>
-								</span>
-						</lightning-layout-item>
-					</div>
-
-
-
-						<div class="qty-button-container">
-							<div class="qty-button">
-										<h3>Quantity:</h3>
-										<lightning-input
-										type="number"
-										value={qty}
-										onchange={handleChange}
-									>
-									</lightning-input>
-								</div>
-								<div>
-									<c-add-to-cart record-id={recordId} qty={qty} total-price={totalPrice}></c-add-to-cart>
-								</div>
-						</div>
-					<div class="product-description">
-						<lightning-layout-item padding="around-small">
-							<div class="slds-p-around_medium ">
-								<span><strong>Description:</strong></span>&nbsp;
-								<p>{description}</p>
-							</div>
-						</lightning-layout-item>
-					</div>
-
-				</div>
-				</lightning-layout>
-		</div>
-		</template>
-		<template if:false={recordId}>
-			<div class="slds-var-p-around_large">
-				<p class="placeholder">Select a product to see details</p>
-			</div>
-		</template>
-	</lightning-card>
+            <div class="qty-button-container">
+              <div class="qty-button">
+                <h3>Quantity:</h3>
+                <lightning-input
+                  type="number"
+                  value={qty}
+                  onchange={handleChange}
+                >
+                </lightning-input>
+              </div>
+              <div>
+                <c-add-to-cart
+                  record-id={recordId}
+                  qty={qty}
+                  total-price={totalPrice}
+                ></c-add-to-cart>
+              </div>
+            </div>
+            <div class="product-description">
+              <lightning-layout-item padding="around-small">
+                <div class="slds-p-around_medium">
+                  <span><strong>Description:</strong></span
+                  >&nbsp;
+                  <p>{description}</p>
+                </div>
+              </lightning-layout-item>
+            </div>
+          </div>
+        </lightning-layout>
+      </div>
+    </template>
+    <template if:false={recordId}>
+      <div class="slds-var-p-around_large">
+        <p class="placeholder">Select a product to see details</p>
+      </div>
+    </template>
+  </lightning-card>
 </template>
